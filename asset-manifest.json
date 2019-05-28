@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/coin-client/static/css/main.f08b232e.chunk.css",
+    "main.js": "/coin-client/static/js/main.71958745.chunk.js",
+    "main.js.map": "/coin-client/static/js/main.71958745.chunk.js.map",
+    "runtime~main.js": "/coin-client/static/js/runtime~main.f140d4f5.js",
+    "runtime~main.js.map": "/coin-client/static/js/runtime~main.f140d4f5.js.map",
+    "static/js/2.05c5614a.chunk.js": "/coin-client/static/js/2.05c5614a.chunk.js",
+    "static/js/2.05c5614a.chunk.js.map": "/coin-client/static/js/2.05c5614a.chunk.js.map",
+    "index.html": "/coin-client/index.html",
+    "precache-manifest.3c7da76f15aae96b476ed276b212b9a8.js": "/coin-client/precache-manifest.3c7da76f15aae96b476ed276b212b9a8.js",
+    "service-worker.js": "/coin-client/service-worker.js",
+    "static/css/main.f08b232e.chunk.css.map": "/coin-client/static/css/main.f08b232e.chunk.css.map"
+  }
+}
