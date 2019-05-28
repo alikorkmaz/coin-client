@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Coinbase from "./pages/Coinbase";
-import CoinbaseReverse from "./pages/CoinbaseReverse";
+import Kraken from "./pages/Kraken";
 import MainPage from "./pages/MainPage";
 import "./App.css";
 
@@ -10,8 +9,7 @@ const App = () => {
     <BrowserRouter>
       <Switch>
         <Route path="/" exact component={MainPage} />
-        <Route path="/coinbase" exact component={Coinbase} />
-        <Route path="/coinbaseReverse" exact component={CoinbaseReverse} />
+        <Route path="/kraken" exact component={Kraken} />
       </Switch>
     </BrowserRouter>
   );

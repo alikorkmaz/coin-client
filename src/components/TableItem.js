@@ -3,6 +3,8 @@ import React from "react";
 class TableItem extends React.Component {
   state = {};
   changeRatio = 0.001;
+  profitMargin = 0.03;
+  profitMarginCross = 0.05;
 
   componentDidMount() {
     const pair = this.props.pair;
@@ -44,21 +46,25 @@ class TableItem extends React.Component {
   };
 
   renderClasses() {
-    if (this.state.result > +this.props.usd) return "positive";
+    if (this.state.result > +this.props.usd + this.profitMargin)
+      return "positive";
     if (this.props.topKoineks) {
       if (
         this.state.title.indexOf("PARIBU") > 0 &&
-        this.state.result > this.props.topParibu.result
+        this.state.result >
+          +this.props.topParibu.result + this.profitMarginCross
       )
         return "paribu";
       if (
         this.state.title.indexOf("BTCTURK") > 0 &&
-        this.state.result > this.props.topBtcturk.result
+        this.state.result >
+          +this.props.topBtcturk.result + this.profitMarginCross
       )
         return "btcturk";
       if (
         this.state.title.indexOf("KOINEKS") > 0 &&
-        this.state.result > this.props.topKoineks.result
+        this.state.result >
+          +this.props.topKoineks.result + this.profitMarginCross
       )
         return "koineks";
     }

@@ -15,19 +15,28 @@ class MainPage extends React.Component {
 
   render() {
     return (
-      <div className="row">
-        <div className="col-6">
-          <Coinbase />
-        </div>
-        <div className="col-6">
-          <CoinbaseReverse />
+      <div className="container">
+        <p className="text-center">Kur: {this.props.usd}</p>
+        <div className="row">
+          <div className="col-md-6">
+            <Coinbase />
+          </div>
+          <div className="col-md-6">
+            <CoinbaseReverse />
+          </div>
         </div>
       </div>
     );
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    usd: state.usd
+  };
+};
+
 export default connect(
-  null,
+  mapStateToProps,
   { fetchCoinbase, fetchCoinbaseReverse, fetchUsd }
 )(MainPage);
