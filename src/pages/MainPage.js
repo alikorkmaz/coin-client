@@ -11,12 +11,17 @@ class MainPage extends React.Component {
     this.props.fetchCoinbaseReverse();
     this.props.fetchCoinbase();
     this.props.fetchUsd();
+    // setInterval(() => {
+    //   this.props.fetchCoinbaseReverse();
+    //   this.props.fetchCoinbase();
+    //   this.props.fetchUsd();
+    // }, 10000);
   }
 
   render() {
     return (
       <div className="container">
-        <p className="text-center">Kur: {this.props.usd}</p>
+        <p className="text-center">Kur: {this.props.usd} </p>
         <div className="row">
           <div className="col-md-6">
             <Coinbase />

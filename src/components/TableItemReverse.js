@@ -3,18 +3,29 @@ import React from "react";
 class TableItemReverse extends React.Component {
   state = {};
   changeRatio = 0.001;
-  profitMargin = 0.03;
+  profitMargin = 0;
   profitMarginCross = 0.05;
 
   componentDidMount() {
-    const pair = this.props.pair;
     this.setState({
-      title: pair.title,
-      commission: pair.commission,
-      buy: pair.buy,
-      sell: pair.sell,
-      result: pair.result
+      title: this.props.pair.title,
+      commission: this.props.pair.commission,
+      buy: this.props.pair.buy,
+      sell: this.props.pair.sell,
+      result: this.props.pair.result,
+      isSelected: this.props.shouldAlert
     });
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps !== this.props)
+      this.setState({
+        title: this.props.pair.title,
+        commission: this.props.pair.commission,
+        buy: this.props.pair.buy,
+        sell: this.props.pair.sell,
+        result: this.props.pair.result
+      });
   }
 
   increaseBuy = () => {
@@ -43,6 +54,16 @@ class TableItemReverse extends React.Component {
       sell: prevState.sell - prevState.sell * this.changeRatio,
       result: prevState.result + prevState.result * this.changeRatio
     }));
+  };
+
+  handleCheckboxClick = () => {
+    if (!this.state.isSelected) {
+      this.props.addTitle(this.state.title);
+      this.setState({ isSelected: true });
+    } else {
+      this.props.removeTitle(this.state.title);
+      this.setState({ isSelected: false });
+    }
   };
 
   renderClasses() {
@@ -102,7 +123,15 @@ class TableItemReverse extends React.Component {
           </button>
         </td>
 
-        <th scope="row">{this.state.title}</th>
+        <th scope="row">
+          {this.state.title}
+          &nbsp;
+          <input
+            type="checkbox"
+            checked={this.state.isSelected}
+            onChange={this.handleCheckboxClick}
+          />
+        </th>
       </tr>
     );
   }

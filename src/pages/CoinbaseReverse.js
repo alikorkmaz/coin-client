@@ -22,6 +22,7 @@ class Coinbase extends React.Component {
           topBtcturk={this.getTopBtcturk()}
           topKoineks={this.getTopKoineks()}
           usd={this.props.usd}
+          shouldAlertReverse={this.props.shouldAlertReverse}
         />
       </div>
     );

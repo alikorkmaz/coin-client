@@ -3,18 +3,29 @@ import React from "react";
 class TableItem extends React.Component {
   state = {};
   changeRatio = 0.001;
-  profitMargin = 0.03;
+  profitMargin = 0.05;
   profitMarginCross = 0.05;
 
   componentDidMount() {
-    const pair = this.props.pair;
     this.setState({
-      title: pair.title,
-      commission: pair.commission,
-      buy: pair.buy,
-      sell: pair.sell,
-      result: pair.result
+      title: this.props.pair.title,
+      commission: this.props.pair.commission,
+      buy: this.props.pair.buy,
+      sell: this.props.pair.sell,
+      result: this.props.pair.result,
+      isSelected: this.props.shouldAlert
     });
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps !== this.props)
+      this.setState({
+        title: this.props.pair.title,
+        commission: this.props.pair.commission,
+        buy: this.props.pair.buy,
+        sell: this.props.pair.sell,
+        result: this.props.pair.result
+      });
   }
 
   increaseBuy = () => {
@@ -70,12 +81,30 @@ class TableItem extends React.Component {
     }
   }
 
+  handleCheckboxClick = () => {
+    if (!this.state.isSelected) {
+      this.props.addTitle(this.state.title);
+      this.setState({ isSelected: true });
+    } else {
+      this.props.removeTitle(this.state.title);
+      this.setState({ isSelected: false });
+    }
+  };
+
   render() {
     if (this.state.buy === undefined) return <tr />;
 
     return (
       <tr className={this.renderClasses()}>
-        <th scope="row">{this.state.title}</th>
+        <th scope="row">
+          <input
+            type="checkbox"
+            checked={this.state.isSelected}
+            onChange={this.handleCheckboxClick}
+          />
+          &nbsp;
+          {this.state.title}
+        </th>
         <td>
           <button className="btn btn-sm btn-danger" onClick={this.decreaseBuy}>
             -
@@ -106,4 +135,5 @@ class TableItem extends React.Component {
     );
   }
 }
+
 export default TableItem;
