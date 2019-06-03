@@ -8,8 +8,8 @@ const App = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" exact component={MainPage} />
-        <Route path="/kraken" exact component={Kraken} />
+        <Route path="/coin-client" exact component={MainPage} />
+        <Route path="/coin-client/kraken" exact component={Kraken} />
       </Switch>
     </BrowserRouter>
   );
