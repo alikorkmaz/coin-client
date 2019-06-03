@@ -5,14 +5,7 @@ import MainPage from "./pages/MainPage";
 import "./App.css";
 
 const App = () => {
-  return (
-    <BrowserRouter>
-      <Switch>
-        <Route path="/coin-client" exact component={MainPage} />
-        <Route path="/coin-client/kraken" exact component={Kraken} />
-      </Switch>
-    </BrowserRouter>
-  );
+  return <MainPage />;
 };
 
 export default App;
