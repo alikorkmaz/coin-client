@@ -3,6 +3,7 @@ import {
   FETCH_COINBASE,
   FETCH_COINBASE_REVERSE,
   FETCH_USD,
+  FETCH_REEL_USD,
   FETCH_KRAKEN,
   FETCH_SELECTIONS_REVERSE,
   FETCH_SELECTIONS
@@ -22,6 +23,11 @@ export const fetchCoinbaseReverse = () => async dispatch => {
 export const fetchUsd = () => async dispatch => {
   const response = await api.get("/kur");
   dispatch({ type: FETCH_USD, payload: response.data.kur });
+};
+
+export const fetchReelUsd = () => async dispatch => {
+  const response = await api.get("/reelkur");
+  dispatch({ type: FETCH_REEL_USD, payload: response.data.kur });
 };
 
 export const fetchKraken = () => async dispatch => {

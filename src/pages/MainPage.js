@@ -4,13 +4,14 @@ import CoinbaseReverse from "./CoinbaseReverse";
 
 import { connect } from "react-redux";
 
-import { fetchCoinbaseReverse, fetchCoinbase, fetchUsd } from "../actions";
+import { fetchCoinbaseReverse, fetchCoinbase, fetchUsd, fetchReelUsd } from "../actions";
 
 class MainPage extends React.Component {
   componentDidMount() {
     this.props.fetchCoinbaseReverse();
     this.props.fetchCoinbase();
     this.props.fetchUsd();
+    this.props.fetchReelUsd();
     // setInterval(() => {
     //   this.props.fetchCoinbaseReverse();
     //   this.props.fetchCoinbase();
@@ -21,7 +22,7 @@ class MainPage extends React.Component {
   render() {
     return (
       <div className="container">
-        <p className="text-center">Kur: {this.props.usd} </p>
+        <p className="text-center">Reel Kur: {this.props.reelUsd}<br/>Kur: {this.props.usd} </p>
         <div className="row">
           <div className="col-md-6">
             <Coinbase />
@@ -37,11 +38,12 @@ class MainPage extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    usd: state.usd
+    usd: state.usd,
+    reelUsd: state.reelUsd
   };
 };
 
 export default connect(
   mapStateToProps,
-  { fetchCoinbase, fetchCoinbaseReverse, fetchUsd }
+  { fetchCoinbase, fetchCoinbaseReverse, fetchUsd, fetchReelUsd }
 )(MainPage);
