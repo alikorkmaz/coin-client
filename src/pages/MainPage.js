@@ -22,7 +22,7 @@ class MainPage extends React.Component {
   render() {
     return (
       <div className="container">
-        <p className="text-center">Reel Kur: {this.props.reelUsd}<br/>Kur: {this.props.usd} </p>
+        <p className="text-center">Kur: {this.props.reelUsd}<br/>Tether: {this.props.usd} </p>
         <div className="row">
           <div className="col-md-6">
             <Coinbase />
