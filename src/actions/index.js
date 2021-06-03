@@ -11,7 +11,7 @@ import {
 import axios from "axios";
 
 export const fetchCoinbase = () => async dispatch => {
-  const response = await api.get("/coinbase");
+  const response = await api.get("/v2/coinbase");
   dispatch({ type: FETCH_COINBASE, payload: response.data });
 };
 
