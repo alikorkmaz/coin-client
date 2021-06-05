@@ -11,7 +11,7 @@ body {
 
 .table-hover tbody tr:hover {
   color: white;
-  background-color: rgb(111, 153, 107);
+  background-color: #4f614e;
 }
 
 .positive {
