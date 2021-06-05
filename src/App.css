@@ -11,22 +11,23 @@ body {
 
 .table-hover tbody tr:hover {
   color: white;
+  background-color: rgb(111, 153, 107);
 }
 
 .positive {
-  background-color: rgb(35, 97, 35);
+  background-color: rgb(35, 97, 35) !important;
 }
 
 .paribu {
-  background-color: rgb(35, 97, 35);
+  background-color: rgb(35, 97, 35) !important;
 }
 
 .btcturk {
-  background-color: rgb(35, 97, 35);
+  background-color: rgb(35, 97, 35) !important;
 }
 
 .koineks {
-  background-color: rgb(35, 97, 35);
+  background-color: rgb(35, 97, 35) !important;
 }
 
 .text-center {
