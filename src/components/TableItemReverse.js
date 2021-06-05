@@ -3,7 +3,7 @@ import React from "react";
 class TableItemReverse extends React.Component {
   state = {};
   changeRatio = 0.001;
-  profitMargin = 0;
+  profitMargin = 0.05;
   profitMarginCross = 0.05;
 
   componentDidMount() {
