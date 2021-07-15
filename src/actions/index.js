@@ -36,11 +36,11 @@ export const fetchKraken = () => async dispatch => {
 };
 
 export const addSelections = titles => async dispatch => {
-  await axios.post("https://coin-serv2.herokuapp.com/alert", titles);
+  await axios.post("http://localhost:3001/alert", titles);
 };
 
 export const removeSelections = titles => async dispatch => {
-  await axios.post("https://coin-serv2.herokuapp.com/alert-delete", titles);
+  await axios.post("http://localhost:3001/alert-delete", titles);
 };
 
 export const fetchSelections = () => async dispatch => {
@@ -49,12 +49,12 @@ export const fetchSelections = () => async dispatch => {
 };
 
 export const addSelectionsReverse = titles => async dispatch => {
-  await axios.post("https://coin-serv2.herokuapp.com/alert-reverse", titles);
+  await axios.post("http://localhost:3001/alert-reverse", titles);
 };
 
 export const removeSelectionsReverse = titles => async dispatch => {
   await axios.post(
-    "https://coin-serv2.herokuapp.com/alert-reverse-delete",
+    "http://localhost:3001/alert-reverse-delete",
     titles
   );
 };
