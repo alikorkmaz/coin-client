@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: "https://coin-serv2.herokuapp.com"
+  baseURL: "http://18.222.16.156:3000"
 });
