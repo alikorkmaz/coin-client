@@ -11,7 +11,7 @@ import {
 import axios from "axios";
 
 export const fetchCoinbase = () => async dispatch => {
-  const response = await api.get("/v2/coinbase");
+  const response = await api.get("/coinbase");
   dispatch({ type: FETCH_COINBASE, payload: response.data });
 };
 
@@ -36,11 +36,11 @@ export const fetchKraken = () => async dispatch => {
 };
 
 export const addSelections = titles => async dispatch => {
-  await axios.post("http://18.222.16.156:3000/alert", titles);
+  await axios.post("http://ec2-52-67-99-93.sa-east-1.compute.amazonaws.com:3000/alert", titles);
 };
 
 export const removeSelections = titles => async dispatch => {
-  await axios.post("http://18.222.16.156:3000/alert-delete", titles);
+  await axios.post("http://ec2-52-67-99-93.sa-east-1.compute.amazonaws.com:3000/alert-delete", titles);
 };
 
 export const fetchSelections = () => async dispatch => {
@@ -49,12 +49,12 @@ export const fetchSelections = () => async dispatch => {
 };
 
 export const addSelectionsReverse = titles => async dispatch => {
-  await axios.post("http://18.222.16.156:3000/alert-reverse", titles);
+  await axios.post("http://ec2-52-67-99-93.sa-east-1.compute.amazonaws.com:3000/alert-reverse", titles);
 };
 
 export const removeSelectionsReverse = titles => async dispatch => {
   await axios.post(
-    "http://18.222.16.156:3000/alert-reverse-delete",
+    "http://ec2-52-67-99-93.sa-east-1.compute.amazonaws.com:3000/alert-reverse-delete",
     titles
   );
 };
