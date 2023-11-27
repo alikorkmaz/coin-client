@@ -36,11 +36,11 @@ export const fetchKraken = () => async dispatch => {
 };
 
 export const addSelections = titles => async dispatch => {
-  await axios.post("http://ec2-18-230-145-212.sa-east-1.compute.amazonaws.com:3000/alert", titles);
+  await axios.post("http://ec2-18-231-193-234.sa-east-1.compute.amazonaws.com:3000/alert", titles);
 };
 
 export const removeSelections = titles => async dispatch => {
-  await axios.post("http://ec2-18-230-145-212.sa-east-1.compute.amazonaws.com:3000/alert-delete", titles);
+  await axios.post("http://ec2-18-231-193-234.sa-east-1.compute.amazonaws.com:3000/alert-delete", titles);
 };
 
 export const fetchSelections = () => async dispatch => {
@@ -49,12 +49,12 @@ export const fetchSelections = () => async dispatch => {
 };
 
 export const addSelectionsReverse = titles => async dispatch => {
-  await axios.post("http://ec2-18-230-145-212.sa-east-1.compute.amazonaws.com:3000/alert-reverse", titles);
+  await axios.post("http://ec2-18-231-193-234.sa-east-1.compute.amazonaws.com:3000/alert-reverse", titles);
 };
 
 export const removeSelectionsReverse = titles => async dispatch => {
   await axios.post(
-    "http://ec2-18-230-145-212.sa-east-1.compute.amazonaws.com:3000/alert-reverse-delete",
+    "http://ec2-18-231-193-234.sa-east-1.compute.amazonaws.com:3000/alert-reverse-delete",
     titles
   );
 };
