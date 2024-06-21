@@ -8,7 +8,6 @@ import {
   FETCH_SELECTIONS_REVERSE,
   FETCH_SELECTIONS
 } from "./types";
-import axios from "axios";
 
 export const fetchCoinbase = () => async dispatch => {
   const response = await api.get("/coinbase");
